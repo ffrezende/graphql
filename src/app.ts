@@ -3,6 +3,7 @@ import * as bodyParser from 'body-parser';
 import * as contextService from 'request-context';
 import * as compression from 'compression';
 import { graphRota } from './shared/rota/graphRota';
+import schemaQLRota from './shared/rota/schemaQLRota';
 
 import * as cors from 'cors';
 import * as morgan from 'morgan';
@@ -41,13 +42,15 @@ class App {
         message: 'Api V1'
       });
     });
-    this.express.use(function(req, res, next) {
+    this.express.use((req, res, next) => {
       res.header('Access-Control-Allow-Origin', '*');
       res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
       res.header('Access-Control-Allow-Methods', '*');
       next();
     });
+
     this.express.use('/api/v1/', router, graphRota);
+    this.express.use('/api/v1/graph', router, schemaQLRota);
   }
 }
 

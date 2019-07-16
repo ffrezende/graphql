@@ -8,6 +8,7 @@ export default class GraphQLController extends BaseController {
 
   graphQL = async (req: Request, res: Response) => {
     try {
+      const { param } = req;
       return res.status(200).json();
     } catch (erro) {
       return res.status(403).json();

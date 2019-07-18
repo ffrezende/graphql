@@ -1,4 +1,4 @@
-##Exemplo de microsserviço utilizando REST API e ENDPoint GraphQL
+## Exemplo de microsserviço utilizando REST API e EndPoint GraphQL
 
 # Configurações
 

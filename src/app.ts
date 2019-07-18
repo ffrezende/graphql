@@ -50,7 +50,7 @@ class App {
     });
 
     this.express.use('/api/v1/', router, graphRota);
-    this.express.use('/api/v1/graph', router, schemaQLRota);
+    this.express.use('/api/v1/graph', schemaQLRota);
   }
 }
 

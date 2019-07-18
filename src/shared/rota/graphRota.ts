@@ -7,6 +7,6 @@ const graphQLController = new GraphQLController();
 
 const graphRota = Router();
 
-graphRota.get('/graph', gerenciadorLog, graphQLController.graphQL);
+graphRota.get('/graph/rest', gerenciadorLog, graphQLController.graphQL);
 
 export { graphRota };

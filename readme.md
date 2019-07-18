@@ -7,4 +7,4 @@ npm run dev <br/>
 
 localhost:3000/api/v1/graph - rota com graphQL <br/>
 
-http://localhost:3000/api/v1/rest - rota GET rest <br/>
+localhost:3000/api/v1/rest - rota GET rest <br/>

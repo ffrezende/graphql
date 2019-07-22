@@ -18,8 +18,8 @@ export default class GraphBLL implements IGraphBLL {
             id
           }
         }`;
-        const resp = await this.graphRepositorio.MessageGraph(author, content, query);
-        resolve();
+
+        resolve(await this.graphRepositorio.MessageGraph(author, content, query));
       } catch (erro) {
         reject(erro);
       }

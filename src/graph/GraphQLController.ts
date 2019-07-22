@@ -16,7 +16,7 @@ export default class GraphQLController extends BaseController {
       const graphBLL = this.obterLib();
       return res.status(200).json(await graphBLL.MessageGraph());
     } catch (erro) {
-      return res.status(403).json();
+      return res.status(403).json(erro);
     }
   };
 }

@@ -2,12 +2,13 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as contextService from 'request-context';
 import * as compression from 'compression';
+import { serve, setup } from 'swagger-ui-express';
 import { graphRota } from './shared/rota/graphRota';
 import schemaQLRota from './shared/rota/schemaQLRota';
-
 import * as cors from 'cors';
 import * as morgan from 'morgan';
 
+const swaggerDocument = require('./swagger.json');
 class App {
   public express;
 
@@ -49,6 +50,7 @@ class App {
       next();
     });
 
+    this.express.use('/api-docs', serve, setup(swaggerDocument));
     this.express.use('/api/v1/', router, graphRota);
     this.express.use('/api/v1/graph', schemaQLRota);
   }
